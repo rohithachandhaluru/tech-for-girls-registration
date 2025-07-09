@@ -5,11 +5,11 @@ const form = document.getElementById("registrationForm");
 const submitBtn = document.getElementById("submitBtn");
 const successMsg = document.getElementById("successMsg");
 
-const submitted = localStorage.getItem("submitted");
-if (submitted === "true") {
-  disableForm();
-  successMsg.classList.remove("hidden");
-}
+// const submitted = localStorage.getItem("submitted");
+// if (submitted === "true") {
+//   disableForm();
+//   successMsg.classList.remove("hidden");
+// }
 
 shareBtn.addEventListener("click", () => {
   if (shareCount < 5) {
@@ -59,7 +59,7 @@ form.addEventListener("submit", async (e) => {
 
   const result = await response.text();
   if (result === "Success") {
-    localStorage.setItem("submitted", "true");
+    // localStorage.setItem("submitted", "true");
     disableForm();
     successMsg.classList.remove("hidden");
   } else {
